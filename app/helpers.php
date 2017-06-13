@@ -4,9 +4,9 @@ use App\Models\Post;
 
 if(! function_exists('set_active_route'))
 {
-	function set_active_route($route)
+	function set_active_route($route,$slug=null)
 	{
-		return Route::is($route) ? 'active' : '' ;
+		return Route::is($route, $slug) ? 'active' : '' ;
 	}
 }
 

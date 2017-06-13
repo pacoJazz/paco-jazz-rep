@@ -21,7 +21,7 @@ class AdminPostsController extends Controller
         {
             return redirect()->route('login_path');
         }
-        $posts = Post::whereType('post')->get();
+        $posts = Post::whereType('post')->paginate(4);
         return view('admin.posts.index', compact('posts'));
     }
 

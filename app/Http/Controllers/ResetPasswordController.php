@@ -74,14 +74,18 @@ class ResetPasswordController extends Controller
     }
 
 
-    public function eff_recovery(ResetFormRequest $request, User $user)
+    public function effective_recovery(ResetFormRequest $request, User $user)
     {
         $user->update([
             'password' => password_hash($request->password, PASSWORD_BCRYPT)
         ]);
 
+        $user = User::findOrFail($user);
+        session_start();
+        $_SESSION['auth'] = $user;
+
         flash('Votre mot de passe a bien été réinitialisé :)');
 
-        return redirect()->route('login_path');
+        return redirect()->route('posts.index');
     }
 }

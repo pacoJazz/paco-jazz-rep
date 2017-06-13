@@ -22,13 +22,10 @@
 			</div>
 			<input type="hidden" name="type" value="post">
 			{{ csrf_field() }}
+			<input type="hidden" name="online" value="0">
 			<div class="form-group">
 				<label>
-					<input type="radio" name="online" value="0" {{ $post->online==0?'checked':'' }} >
-					Mettre hors ligne
-				</label><br>
-				<label>
-					<input type="radio" name="online" value="1" {{ $post->online==1?'checked':'' }}>
+					<input type="checkbox" name="online" value="1" {{ $post->online==1?'checked':'' }} >
 					Mettre en ligne
 				</label>
 			</div>

@@ -21,7 +21,7 @@
 
   <body>
 
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -59,5 +59,7 @@
     <script src="{{ asset('/js/jquery.min.js') }}"></script>
     <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/js/larails.js') }}"></script>
+    <script src="{{ asset('/js/tinymce.js') }}"></script>
+    <script src="{{ asset('/js/init-tinymce.js') }}"></script>
   </body>
 </html>

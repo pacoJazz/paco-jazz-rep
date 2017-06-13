@@ -9,7 +9,7 @@
 @foreach($posts as $post)
 <div class="clearfix">
 	<h2>{{ $post->name }}</h2>
-	<article>{!! substr($post->content, 0, 150).'...' !!}</article>
+	<article>{!! substr($post->content, 0, 250).'...' !!}</article>
 	<a href="{{ route('post_path', $post) }}">Lire la suite &rarr;</a>
 </div>
 @endforeach

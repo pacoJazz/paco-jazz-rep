@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="page-header">
-	<h1>Gestion des pages</h1>
+  <h1>Gestion des pages <small>( {{ $pages->count() }} pages créées )</small></h1>
 	@include('layouts.partials._flash')
 </div>
 <a href="{{ route('pages.create') }}" class="btn btn-info btn-sm pull-right">Créer une page</a>

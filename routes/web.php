@@ -68,5 +68,6 @@ Route::get('/password/recovery/{user}', [
 
 Route::put('/password/effective_recovery/{user}', [
 	'as' => 'eff_recovery',
-	'uses' => 'ResetPasswordController@effective_login'
+	'uses' => 'ResetPasswordController@effective_recovery'
 ]);
+

@@ -3,8 +3,8 @@
 @section('content')
 @include('layouts.partials._flash')
 <div class="jumbotron">
-    <h1 class="text-center">ACCUEIL</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    <h1 class="text-center lead">ACCUEIL</h1>
+    <p class="text-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse

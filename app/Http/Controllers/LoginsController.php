@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginFormRequest;
 use App\Models\User;
+use \DB;
 
 class LoginsController extends Controller
 {
@@ -16,25 +17,22 @@ class LoginsController extends Controller
 
     public function effective_login(LoginFormRequest $request)
     {
-    	$user = User::whereEmail($request->email)->first();
+        $user = User::where(['email' => $request->identifiant])
+                    ->orWhere(['username' => $request->identifiant])->first();
 
-    	if($user && password_verify($request->password, $user->password))
-    	{
-    		session_start();
-    		$_SESSION = [
-    			'auth' => $user
-    		];
-    		if($user->role == 'admin')
-    		{
-                flash('Vous êtes maintenant connecté(e) :)');
-    			return redirect()->route('posts.index');
-    		}
-    	}
-    	else
-    	{
-    		flash('Mauvais email ou mot de passe','danger');
-    		return redirect()->back();
-    	}
+
+        if($user && password_verify($request->password, $user->password)) 
+        {
+            session_start();
+            $_SESSION['auth'] = $user;
+            flash('Vous êtes mantenant connecté(e) :)');
+            return redirect()->route('posts.index');
+        }
+        else
+        {
+            flash("Mauvais identifiant ou mot de passe :)", 'danger');
+            return redirect()->back();
+        }   
     }
 
     public function logout()

@@ -21,13 +21,10 @@
 			</div>
 			<input type="hidden" name="type" value="page">
 			{{ csrf_field() }}
+			<input type="hidden" name="online" value="0">
 			<div class="form-group">
 				<label>
-					<input type="radio" name="online" value="0" checked>
-					Mettre hors ligne
-				</label><br>
-				<label>
-					<input type="radio" name="online" value="1">
+					<input type="checkbox" name="online" value="1">
 					Mettre en ligne
 				</label>
 			</div>

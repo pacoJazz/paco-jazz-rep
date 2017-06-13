@@ -10,7 +10,7 @@ class PostsController extends Controller
 {
     public function index()
     {
-    	$posts = Post::where(['online' => 1, 'type' => 'post'])->paginate(3);
+    	$posts = Post::where(['online' => 1, 'type' => 'post'])->paginate(4);
     	return view('posts.index', compact('posts'));
     }
 
